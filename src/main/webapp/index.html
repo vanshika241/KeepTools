@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeepTools | All-in-One Utility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --brand-orange: oklch(66.6% 0.179 58.318); }
+        body {
+            background-color: #000000;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px),
+                radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px);
+            background-size: 20px 20px, 20px 20px, 20px 20px;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        .orange-text { color: var(--brand-orange); }
+        .orange-bg { background-color: var(--brand-orange); }
+        .card-container {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        input[type="radio"]:checked + .card-container {
+            border-color: var(--brand-orange);
+            background: rgba(250, 133, 52, 0.08);
+            box-shadow: 0 0 25px rgba(250, 133, 52, 0.15);
+        }
+        input[type="radio"] { display: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+
+    <div class="text-center mb-16">
+        <h1 class="text-6xl font-black mb-4 tracking-tight">Welcome to <span class="orange-text">KeepTools</span></h1>
+        <p class="text-white text-2xl">Powerful web utilities for your daily workflow.</p>
+    </div>
+
+    <form action="Controller.jsp" method="get" class="w-full max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            
+            <label>
+                <input type="radio" name="choose" value="fileConverter" required>
+                <div class="card-container p-10 rounded-3xl cursor-pointer h-full text-center">
+                    <div class="text-5xl mb-6">📄</div>
+                    <h3 class="text-2xl font-bold mb-3">PDF to DOC</h3>
+                    <p class="text-yellow-600 text-sm">Convert and edit PDF documents seamlessly.</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="choose" value="ImageToPdf">
+                <div class="card-container p-10 rounded-3xl cursor-pointer h-full text-center">
+                    <div class="text-5xl mb-6">🖼️</div>
+                    <h3 class="text-2xl font-bold mb-3">Image to PDF</h3>
+                    <p class="text-yellow-600 text-sm">Merge multiple images into one PDF file.</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="choose" value="ImageResizer">
+                <div class="card-container p-10 rounded-3xl cursor-pointer h-full text-center">
+                    <div class="text-5xl mb-6">📐</div>
+                    <h3 class="text-2xl font-bold mb-3">Image Resizer</h3>
+                    <p class="text-yellow-600 text-sm">Compress and resize images instantly.</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="choose" value="Canva">
+                <div class="card-container p-10 rounded-3xl cursor-pointer h-full text-center">
+                    <div class="text-5xl mb-6">🎨</div>
+                    <h3 class="text-2xl font-bold mb-3">Canva</h3>
+                    <p class="text-yellow-600 text-sm">Design posters and professional resumes.</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="choose" value="VideoConverter">
+                <div class="card-container p-10 rounded-3xl cursor-pointer h-full text-center">
+                    <div class="text-5xl mb-6">🎬</div>
+                    <h3 class="text-2xl font-bold mb-3">Video Tool</h3>
+                    <p class="text-yellow-600 text-sm">Change formats and compress video size.</p>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="choose" value="OCR">
+                <div class="card-container p-10 rounded-3xl cursor-pointer h-full text-center">
+                    <div class="text-5xl mb-6">🔍</div>
+                    <h3 class="text-2xl font-bold mb-3">OCR Tool</h3>
+                    <p class="text-yellow-600 text-sm">Extract text from any image or scan.</p>
+                </div>
+            </label>
+
+        </div>
+
+        <div class="flex justify-center">
+            <button type="submit" class="orange-bg text-black font-black py-5 px-16 rounded-2xl text-xl hover:scale-105 transition-transform shadow-lg">
+                CONTINUE
+            </button>
+        </div>
+    </form>
+</body>
+</html>
